@@ -5,3 +5,6 @@ Academy 387 Group 2 Repository
 
 * **Day 2**
 Interaction between controller and UI elements.
+
+* **Day 3**
+Create new User instance with segue operation
