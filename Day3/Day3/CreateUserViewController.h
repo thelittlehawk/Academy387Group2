@@ -10,7 +10,7 @@
 #import "User.h"
 #import "ShowUserViewController.h"
 
-@interface ViewController : UIViewController
+@interface CreateUserViewController : UIViewController
 <UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *firstNameTextField;

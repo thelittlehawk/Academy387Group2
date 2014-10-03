@@ -14,7 +14,7 @@
 
 @property NSString* lastName;
 
--(User*)initWithFirstName:(NSString*)firstName lastName:(NSString*)lastName;
+-(id)initWithFirstName:(NSString*)firstName lastName:(NSString*)lastName;
 
 -(NSString*) getFullName;
 

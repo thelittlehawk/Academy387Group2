@@ -10,10 +10,14 @@
 
 @implementation User
 
--(User*)initWithFirstName:(NSString*)firstName lastName:(NSString*)lastName {
-    self.firstName = firstName;
-    self.lastName = lastName;
-    return self;
+-(id)initWithFirstName:(NSString*)firstName lastName:(NSString*)lastName {
+    if(self = [super init]) {
+        self.firstName = firstName;
+        self.lastName = lastName;
+        return self;
+    } else {
+        return nil;
+    }
 }
 
 -(NSString*) getFullName {
