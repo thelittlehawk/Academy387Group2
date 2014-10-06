@@ -8,3 +8,6 @@ Interaction between controller and UI elements.
 
 * **Day 3**
 Create new User instance with segue operation
+
+* **Day 4**
+Display list of users in UITableView component
