@@ -7,11 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "User.h"
 
 @interface UserDetailViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
 
--(void)setUsername:(NSString*)username;
+-(void)setUsername:(User*)selectedUser;
 
 @end

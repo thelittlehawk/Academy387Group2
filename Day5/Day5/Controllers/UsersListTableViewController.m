@@ -9,7 +9,8 @@
 #import "UsersListTableViewController.h"
 
 @interface UsersListTableViewController () {
-    NSArray *users;
+    NSArray* users;
+    SharedStorage* storage;
 }
 
 @end
@@ -18,13 +19,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    users = [[NSArray alloc] initWithObjects:@"User 1", @"User 2", @"User 3", nil];
+    storage = [SharedStorage getInstance];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -41,14 +36,15 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return users.count;
+    return storage.users.count;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"userCell" forIndexPath:indexPath];
     
-    cell.textLabel.text = [users objectAtIndex:indexPath.row];
+    User* user = [storage.users objectAtIndex:indexPath.row];
+    cell.textLabel.text = user.firstName;
     
     return cell;
 }
@@ -59,9 +55,10 @@
     if ([[segue identifier] isEqualToString:@"userDetail"]) {
          UserDetailViewController* controller = (UserDetailViewController*) [segue destinationViewController];
         
-        NSString* username = [users objectAtIndex:[self.tableView indexPathForSelectedRow].row];
+        User* selectedUser = [storage.users objectAtIndex:[self.tableView indexPathForSelectedRow].row];
+        NSString* username = selectedUser.firstName;
         
-        [controller setUsername:username];
+        [controller setUsername:selectedUser];
     }
 }
 

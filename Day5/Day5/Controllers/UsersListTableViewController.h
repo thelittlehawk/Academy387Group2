@@ -8,9 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "UserDetailViewController.h"
+#import "SharedStorage.h"
+#import "User.h"
 
 @interface UsersListTableViewController : UITableViewController
-
--(void)setUsername:(NSString*)username;
 
 @end

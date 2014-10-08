@@ -46,6 +46,12 @@
     user.firstName = self.firstNameTextField.text;
     user.lastName = self.lastNameTextField.text;
     user.group = [groups objectAtIndex:[self.groupPickerView selectedRowInComponent:0]];
+    
+    // Save user to SharedStorage object
+    SharedStorage* storage = [SharedStorage getInstance];
+    [storage.users addObject:user];
+    
+    [self.navigationController popViewControllerAnimated:NO];
 }
 
 /*

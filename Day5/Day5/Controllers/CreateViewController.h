@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "User.h"
+#import "SharedStorage.h"
 
 @interface CreateViewController : UIViewController
 <UIPickerViewDataSource, UIPickerViewDelegate>

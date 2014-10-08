@@ -10,4 +10,9 @@
 
 @implementation User
 
+-(NSString*)getFullName {
+    NSString* fullName = [[NSString alloc] initWithFormat:@"%@, %@ :: %@", self.firstName, self.lastName, self.group, nil];
+    return fullName;
+}
+
 @end

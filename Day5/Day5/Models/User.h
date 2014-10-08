@@ -16,4 +16,6 @@
 
 @property NSString* group;
 
+-(NSString*)getFullName;
+
 @end
