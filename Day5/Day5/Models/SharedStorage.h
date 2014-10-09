@@ -7,13 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "User.h"
 
 @interface SharedStorage : NSObject {
     SharedStorage* sharedStorage;
 }
 
+@property NSMutableArray* users;
+
 + (id)getInstance;
 
-@property NSMutableArray* users;
+-(void)updateApp;
 
 @end

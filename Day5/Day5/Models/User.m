@@ -15,4 +15,11 @@
     return fullName;
 }
 
+-(id)initWithFirstName:(NSString*)firstName lastName:(NSString*)lastName group:(NSString*)group {
+    self.firstName = firstName;
+    self.lastName = lastName;
+    self.group = group;
+    return self;
+}
+
 @end

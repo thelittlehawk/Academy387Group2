@@ -18,4 +18,6 @@
 
 -(NSString*)getFullName;
 
+-(id)initWithFirstName:(NSString*)firstName lastName:(NSString*)lastName group:(NSString*)group;
+
 @end

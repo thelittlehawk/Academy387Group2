@@ -19,7 +19,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+}
+
+-(void) viewWillAppear:(BOOL)animated{
     storage = [SharedStorage getInstance];
+    [storage updateApp];
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {

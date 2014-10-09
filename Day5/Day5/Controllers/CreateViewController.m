@@ -46,22 +46,22 @@
     user.firstName = self.firstNameTextField.text;
     user.lastName = self.lastNameTextField.text;
     user.group = [groups objectAtIndex:[self.groupPickerView selectedRowInComponent:0]];
-    
-    // Save user to SharedStorage object
-    SharedStorage* storage = [SharedStorage getInstance];
-    [storage.users addObject:user];
-    
-    [self.navigationController popViewControllerAnimated:NO];
-}
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    NSString* formData = [[NSString alloc] initWithFormat:@"firstName=%@&lastName=%@&group=%@", user.firstName, user.lastName, user.group];
+    NSData* data = [formData dataUsingEncoding:NSASCIIStringEncoding];
+    
+    NSString* serverPath = [NSString stringWithFormat:@"http://192.168.224.95:8080/user/"];
+    NSURL* serverUrl = [[NSURL alloc] initWithString:serverPath];
+ 
+    NSMutableURLRequest* request = [[NSMutableURLRequest alloc] initWithURL:serverUrl];
+    [request setHTTPBody:data];
+    [request setHTTPMethod:@"POST"];
+    
+    [NSURLConnection sendAsynchronousRequest:request queue:[[NSOperationQueue alloc] init] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+        if(connectionError == nil) {
+            //[self.navigationController popViewControllerAnimated:NO];
+        }
+    }];
 }
-*/
 
 @end
