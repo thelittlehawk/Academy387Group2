@@ -42,7 +42,9 @@
 }
 
 - (IBAction)saveClicked:(id)sender {
-    User* user = [[User alloc] init];
+    AppDelegate* delegate = [UIApplication sharedApplication].delegate;
+    NSManagedObjectContext* managedObjectContext = delegate.managedObjectContext;
+    User* user = [NSEntityDescription insertNewObjectForEntityForName:@"User" inManagedObjectContext:managedObjectContext];
     user.firstName = self.firstNameTextField.text;
     user.lastName = self.lastNameTextField.text;
     user.group = [groups objectAtIndex:[self.groupPickerView selectedRowInComponent:0]];
@@ -50,7 +52,7 @@
     NSString* formData = [[NSString alloc] initWithFormat:@"firstName=%@&lastName=%@&group=%@", user.firstName, user.lastName, user.group];
     NSData* data = [formData dataUsingEncoding:NSASCIIStringEncoding];
     
-    NSString* serverPath = [NSString stringWithFormat:@"http://192.168.224.95:8080/user/"];
+    NSString* serverPath = [NSString stringWithFormat:@"http://192.168.1.165:8080/user/"];
     NSURL* serverUrl = [[NSURL alloc] initWithString:serverPath];
  
     NSMutableURLRequest* request = [[NSMutableURLRequest alloc] initWithURL:serverUrl];

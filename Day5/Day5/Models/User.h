@@ -2,22 +2,24 @@
 //  User.h
 //  Day5
 //
-//  Created by Faik Catibusic on 10/6/14.
+//  Created by Faik Catibusic on 10/9/14.
 //  Copyright (c) 2014 Academy387. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
 
-@interface User : NSObject
 
-@property NSString* firstName;
+@interface User : NSManagedObject
 
-@property NSString* lastName;
+@property NSString * firstName;
 
-@property NSString* group;
+@property NSString * lastName;
 
--(NSString*)getFullName;
+@property NSString * group;
 
 -(id)initWithFirstName:(NSString*)firstName lastName:(NSString*)lastName group:(NSString*)group;
+
+-(NSString*)getFullName;
 
 @end

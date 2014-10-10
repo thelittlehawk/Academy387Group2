@@ -7,10 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
+#import "AppDelegate.h"
 #import "User.h"
 
 @interface SharedStorage : NSObject {
     SharedStorage* sharedStorage;
+    NSManagedObjectContext *managedObjectContext;
 }
 
 @property NSMutableArray* users;
@@ -18,5 +21,7 @@
 + (id)getInstance;
 
 -(void)updateApp;
+
+-(NSArray*)fetchUsersFromDatabase;
 
 @end

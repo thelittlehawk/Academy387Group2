@@ -24,6 +24,7 @@
 -(void) viewWillAppear:(BOOL)animated{
     storage = [SharedStorage getInstance];
     [storage updateApp];
+    users = [storage fetchUsersFromDatabase];
     [self.tableView reloadData];
 }
 
@@ -41,14 +42,14 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return storage.users.count;
+    return users.count;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"userCell" forIndexPath:indexPath];
     
-    User* user = [storage.users objectAtIndex:indexPath.row];
+    User* user = [users objectAtIndex:indexPath.row];
     cell.textLabel.text = user.firstName;
     
     return cell;
@@ -60,8 +61,7 @@
     if ([[segue identifier] isEqualToString:@"userDetail"]) {
          UserDetailViewController* controller = (UserDetailViewController*) [segue destinationViewController];
         
-        User* selectedUser = [storage.users objectAtIndex:[self.tableView indexPathForSelectedRow].row];
-        NSString* username = selectedUser.firstName;
+        User* selectedUser = [users objectAtIndex:[self.tableView indexPathForSelectedRow].row];
         
         [controller setUsername:selectedUser];
     }

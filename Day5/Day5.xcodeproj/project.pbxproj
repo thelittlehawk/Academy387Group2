@@ -15,9 +15,10 @@
 		208BB88519E2EFF800982696 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 208BB88319E2EFF800982696 /* LaunchScreen.xib */; };
 		208BB89119E2EFF800982696 /* Day5Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 208BB89019E2EFF800982696 /* Day5Tests.m */; };
 		208BB89C19E2F3FD00982696 /* CreateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 208BB89B19E2F3FD00982696 /* CreateViewController.m */; };
-		208BB89F19E2F7B200982696 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 208BB89E19E2F7B200982696 /* User.m */; };
 		208BB8A219E2FC9B00982696 /* UsersListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 208BB8A119E2FC9B00982696 /* UsersListTableViewController.m */; };
 		208BB8A519E3063B00982696 /* UserDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 208BB8A419E3063B00982696 /* UserDetailViewController.m */; };
+		209FD85019E6B2AE00B4AC47 /* UserManagement.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 209FD84E19E6B2AE00B4AC47 /* UserManagement.xcdatamodeld */; };
+		209FD85319E6BBED00B4AC47 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 209FD85219E6BBED00B4AC47 /* User.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,12 +47,13 @@
 		208BB89019E2EFF800982696 /* Day5Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Day5Tests.m; sourceTree = "<group>"; };
 		208BB89A19E2F3FD00982696 /* CreateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CreateViewController.h; path = Controllers/CreateViewController.h; sourceTree = "<group>"; };
 		208BB89B19E2F3FD00982696 /* CreateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CreateViewController.m; path = Controllers/CreateViewController.m; sourceTree = "<group>"; };
-		208BB89D19E2F7B200982696 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = Models/User.h; sourceTree = "<group>"; };
-		208BB89E19E2F7B200982696 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User.m; path = Models/User.m; sourceTree = "<group>"; };
 		208BB8A019E2FC9B00982696 /* UsersListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UsersListTableViewController.h; path = Controllers/UsersListTableViewController.h; sourceTree = "<group>"; };
 		208BB8A119E2FC9B00982696 /* UsersListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UsersListTableViewController.m; path = Controllers/UsersListTableViewController.m; sourceTree = "<group>"; };
 		208BB8A319E3063B00982696 /* UserDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserDetailViewController.h; path = Controllers/UserDetailViewController.h; sourceTree = "<group>"; };
 		208BB8A419E3063B00982696 /* UserDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserDetailViewController.m; path = Controllers/UserDetailViewController.m; sourceTree = "<group>"; };
+		209FD84F19E6B2AE00B4AC47 /* UserManagement.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = UserManagement.xcdatamodel; sourceTree = "<group>"; };
+		209FD85119E6BBED00B4AC47 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = Models/User.h; sourceTree = "<group>"; };
+		209FD85219E6BBED00B4AC47 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User.m; path = Models/User.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,8 +90,9 @@
 		20219C8819E4451E009A187B /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				208BB89D19E2F7B200982696 /* User.h */,
-				208BB89E19E2F7B200982696 /* User.m */,
+				209FD84E19E6B2AE00B4AC47 /* UserManagement.xcdatamodeld */,
+				209FD85119E6BBED00B4AC47 /* User.h */,
+				209FD85219E6BBED00B4AC47 /* User.m */,
 				20219C8919E44A01009A187B /* SharedStorage.h */,
 				20219C8A19E44A01009A187B /* SharedStorage.m */,
 			);
@@ -255,13 +258,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				208BB89F19E2F7B200982696 /* User.m in Sources */,
+				209FD85319E6BBED00B4AC47 /* User.m in Sources */,
 				208BB87A19E2EFF800982696 /* AppDelegate.m in Sources */,
 				20219C8B19E44A01009A187B /* SharedStorage.m in Sources */,
 				208BB87719E2EFF800982696 /* main.m in Sources */,
 				208BB89C19E2F3FD00982696 /* CreateViewController.m in Sources */,
 				208BB8A519E3063B00982696 /* UserDetailViewController.m in Sources */,
 				208BB8A219E2FC9B00982696 /* UsersListTableViewController.m in Sources */,
+				209FD85019E6B2AE00B4AC47 /* UserManagement.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -464,6 +468,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		209FD84E19E6B2AE00B4AC47 /* UserManagement.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				209FD84F19E6B2AE00B4AC47 /* UserManagement.xcdatamodel */,
+			);
+			currentVersion = 209FD84F19E6B2AE00B4AC47 /* UserManagement.xcdatamodel */;
+			path = UserManagement.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 208BB86919E2EFF800982696 /* Project object */;
 }
